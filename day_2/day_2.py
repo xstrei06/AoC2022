@@ -45,3 +45,4 @@ for line in f.readlines():
                 continue
 print(score1)
 print(score2)
+f.close()

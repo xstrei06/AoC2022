@@ -18,6 +18,6 @@ for line in f.readlines():
         elf = 0
     else:
         elf += int(line)
-print('\n')
 print("most calories: " + str(max))
 print("top three: " + str(max + top2 + top3))
+f.close()
