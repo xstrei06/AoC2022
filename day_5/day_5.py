@@ -20,6 +20,7 @@ stack8 = stack8.split(" ")
 stack9 = stack9.split(" ")
 
 nline = 1
+stack_from = ""
 for line in f.readlines():
     if nline != 11:
         nline += 1
@@ -29,25 +30,26 @@ for line in f.readlines():
     i = int(line[0])
     match line[1]:
         case "1":
-            first = stack1
+            stack_from = stack1
         case "2":
-            first = stack2
+            stack_from = stack2
         case "3":
-            first = stack3
+            stack_from = stack3
         case "4":
-            first = stack4
+            stack_from = stack4
         case "5":
-            first = stack5
+            stack_from = stack5
         case "6":
-            first = stack6
+            stack_from = stack6
         case "7":
-            first = stack7
+            stack_from = stack7
         case "8":
-            first = stack8
+            stack_from = stack8
         case "9":
-            first = stack9
+            stack_from = stack9
         case _:
             continue
+    print(stack_from)
 print(stack1)
 print(stack2)
 print(stack3)
