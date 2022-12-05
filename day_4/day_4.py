@@ -26,3 +26,4 @@ for line in f.readlines():
             break
 print("one range in the other: " + str(count1))
 print("overlap at all: " + str(count2))
+f.close()
