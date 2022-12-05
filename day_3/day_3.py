@@ -1,6 +1,4 @@
 f1 = open("input.txt", "r")
-first_half = ""
-second_half = ""
 sum_errors = 0
 sum_badges = 0
 nline = 1

@@ -7,26 +7,26 @@ for line in f.readlines():
     if line[0] == "A":
         match line[1]:
             case "X":
-                score1  += (1+3)
+                score1 += (1+3)
                 score2 += (3+0)
             case "Y":
-                score1  += (2+6)
+                score1 += (2+6)
                 score2 += (1+3)
             case "Z":
-                score1  += (3+0)
+                score1 += (3+0)
                 score2 += (2+6)
             case _:
                 continue
     elif line[0] == "B":
         match line[1]:
             case "X":
-                score1  += (1+0)
+                score1 += (1+0)
                 score2 += (1+0)
             case "Y":
-                score1  += (2+3)
+                score1 += (2+3)
                 score2 += (2+3)
             case "Z":
-                score1  += (3+6)
+                score1 += (3+6)
                 score2 += (3+6)
             case _:
                 continue
@@ -43,6 +43,6 @@ for line in f.readlines():
                 score2 += (1+6)
             case _:
                 continue
-print(score1)
-print(score2)
+print("part one: " + str(score1))
+print("part two: " + str(score2))
 f.close()
