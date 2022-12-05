@@ -1,6 +1,4 @@
 f = open("input.txt", "r")
-first = ""
-second = ""
 count1 = 0
 count2 = 0
 added = 0
