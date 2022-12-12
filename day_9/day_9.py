@@ -24,6 +24,8 @@ for line in f.readlines():
                             tail[j][0] -= 1
                         elif (tail[j - 1][0] - tail[j][0]) > 1:
                             tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
+                            tail[j][0] = tail[j - 1][0]
 
                     elif (tail[j-1][1] - tail[j][1]) < -1:
                         tail[j][1] -= 1
@@ -31,15 +33,26 @@ for line in f.readlines():
                             tail[j][0] -= 1
                         elif (tail[j - 1][0] - tail[j][0]) > 1:
                             tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
+                            tail[j][0] = tail[j - 1][0]
 
-                    elif (tail[j-1][0] - tail[j][0]) < -1:
+                    elif (tail[j - 1][0] - tail[j][0]) < -1:
                         tail[j][0] -= 1
-                        if tail[j-1][1] != tail[j][1]:
-                            tail[j][1] = tail[j-1][1]
-                    elif (tail[j-1][0] - tail[j][0]) > 1:
+                        if (tail[j - 1][1] - tail[j][1]) > 1:
+                            tail[j][1] += 1
+                        elif (tail[j - 1][1] - tail[j][1]) < -1:
+                            tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
+
+                    elif (tail[j - 1][0] - tail[j][0]) > 1:
                         tail[j][0] += 1
-                        if tail[j-1][1] != tail[j][1]:
-                            tail[j][1] = tail[j-1][1]
+                        if (tail[j - 1][1] - tail[j][1]) > 1:
+                            tail[j][1] += 1
+                        elif (tail[j - 1][1] - tail[j][1]) < -1:
+                            tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
                 if tail[8] not in visited2:
                     visited2.append([tail[8][0], tail[8][1]])
         case "L":
@@ -58,6 +71,8 @@ for line in f.readlines():
                             tail[j][0] -= 1
                         elif (tail[j - 1][0] - tail[j][0]) > 1:
                             tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
+                            tail[j][0] = tail[j - 1][0]
 
                     elif (tail[j - 1][1] - tail[j][1]) < -1:
                         tail[j][1] -= 1
@@ -65,14 +80,25 @@ for line in f.readlines():
                             tail[j][0] -= 1
                         elif (tail[j - 1][0] - tail[j][0]) > 1:
                             tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
+                            tail[j][0] = tail[j - 1][0]
 
                     elif (tail[j - 1][0] - tail[j][0]) < -1:
                         tail[j][0] -= 1
-                        if tail[j - 1][1] != tail[j][1]:
+                        if (tail[j - 1][1] - tail[j][1]) > 1:
+                            tail[j][1] += 1
+                        elif (tail[j - 1][1] - tail[j][1]) < -1:
+                            tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
                             tail[j][1] = tail[j - 1][1]
+
                     elif (tail[j - 1][0] - tail[j][0]) > 1:
                         tail[j][0] += 1
-                        if tail[j - 1][1] != tail[j][1]:
+                        if (tail[j - 1][1] - tail[j][1]) > 1:
+                            tail[j][1] += 1
+                        elif (tail[j - 1][1] - tail[j][1]) < -1:
+                            tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
                             tail[j][1] = tail[j - 1][1]
                 if tail[8] not in visited2:
                     visited2.append([tail[8][0], tail[8][1]])
@@ -88,11 +114,20 @@ for line in f.readlines():
                 for j in range(1, 9):
                     if (tail[j - 1][1] - tail[j][1]) > 1:
                         tail[j][1] += 1
-                        if tail[j - 1][0] != tail[j][0]:
+                        if (tail[j - 1][0] - tail[j][0]) < -1:
+                            tail[j][0] -= 1
+                        elif (tail[j - 1][0] - tail[j][0]) > 1:
+                            tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
                             tail[j][0] = tail[j - 1][0]
+
                     elif (tail[j - 1][1] - tail[j][1]) < -1:
                         tail[j][1] -= 1
-                        if tail[j - 1][0] != tail[j][0]:
+                        if (tail[j - 1][0] - tail[j][0]) < -1:
+                            tail[j][0] -= 1
+                        elif (tail[j - 1][0] - tail[j][0]) > 1:
+                            tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
                             tail[j][0] = tail[j - 1][0]
 
                     elif (tail[j - 1][0] - tail[j][0]) < -1:
@@ -101,6 +136,8 @@ for line in f.readlines():
                             tail[j][1] += 1
                         elif (tail[j - 1][1] - tail[j][1]) < -1:
                             tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
 
                     elif (tail[j - 1][0] - tail[j][0]) > 1:
                         tail[j][0] += 1
@@ -108,6 +145,9 @@ for line in f.readlines():
                             tail[j][1] += 1
                         elif (tail[j - 1][1] - tail[j][1]) < -1:
                             tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
+
                 if tail[8] not in visited2:
                     visited2.append([tail[8][0], tail[8][1]])
         case "U":
@@ -122,11 +162,20 @@ for line in f.readlines():
                 for j in range(1, 9):
                     if (tail[j - 1][1] - tail[j][1]) > 1:
                         tail[j][1] += 1
-                        if tail[j - 1][0] != tail[j][0]:
+                        if (tail[j - 1][0] - tail[j][0]) < -1:
+                            tail[j][0] -= 1
+                        elif (tail[j - 1][0] - tail[j][0]) > 1:
+                            tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
                             tail[j][0] = tail[j - 1][0]
+
                     elif (tail[j - 1][1] - tail[j][1]) < -1:
                         tail[j][1] -= 1
-                        if tail[j - 1][0] != tail[j][0]:
+                        if (tail[j - 1][0] - tail[j][0]) < -1:
+                            tail[j][0] -= 1
+                        elif (tail[j - 1][0] - tail[j][0]) > 1:
+                            tail[j][0] += 1
+                        elif tail[j - 1][0] != tail[j][0]:
                             tail[j][0] = tail[j - 1][0]
 
                     elif (tail[j - 1][0] - tail[j][0]) < -1:
@@ -135,6 +184,8 @@ for line in f.readlines():
                             tail[j][1] += 1
                         elif (tail[j - 1][1] - tail[j][1]) < -1:
                             tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
 
                     elif (tail[j - 1][0] - tail[j][0]) > 1:
                         tail[j][0] += 1
@@ -142,6 +193,9 @@ for line in f.readlines():
                             tail[j][1] += 1
                         elif (tail[j - 1][1] - tail[j][1]) < -1:
                             tail[j][1] -= 1
+                        elif tail[j - 1][1] != tail[j][1]:
+                            tail[j][1] = tail[j - 1][1]
+
                 if tail[8] not in visited2:
                     visited2.append([tail[8][0], tail[8][1]])
         case _:
