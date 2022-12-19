@@ -31,7 +31,7 @@ print(monkeys)
 mod = 1
 for i in range(8):
     mod *= monkeys[i][3]
-print(mod)
+
 for i in range(0, 10000):
     for monkey in monkeys:
         for item in monkey[0]:
@@ -53,11 +53,6 @@ for i in range(0, 10000):
             else:
                 monkeys[monkey[5]][0].append(item)
         monkey[0] = []
-
-print(monkeys[0][6])
-print(monkeys[1][6])
-print(monkeys[2][6])
-print(monkeys[3][6])
 
 business = []
 for monkey in monkeys:
